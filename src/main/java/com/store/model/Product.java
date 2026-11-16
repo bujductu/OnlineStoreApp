@@ -7,28 +7,18 @@ public class Product implements Serializable {
 
     private String productName;
     private String detailedDescription;
-
-
     private double importPrice;
     private double retailPrice;
     private double salePrice;
-
-
     private int stockQuantity;
     private int reservedQuantity;
     private int minReorderLevel;
-
-
     private String unit;
     private String thumbnailImageUrl;
-
     private String imageGalleryUrls;
-
     private String productStatus;
-
     public Product() {
     }
-
     public Product(int id, String productName, String detailedDescription, double retailPrice, int stockQuantity, double salePrice, String thumbnailImageUrl) {
         this.id = id;
         this.productName = productName;
@@ -38,7 +28,6 @@ public class Product implements Serializable {
         this.salePrice = salePrice;
         this.thumbnailImageUrl = thumbnailImageUrl;
     }
-
     public int getId() {
         return id;
     }

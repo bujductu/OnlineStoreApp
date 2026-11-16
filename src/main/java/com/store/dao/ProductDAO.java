@@ -7,9 +7,6 @@ public class ProductDAO extends BaseDAO{
     public ProductDAO(){
         super();
     }
-    public List<Product> searchProductByName(String keyword) {
-        return searchProductByName(keyword, "az");
-    }
     public List<Product> searchProductByName(String keyword,String sortBy) {
         List<Product> products = new ArrayList<>();
         String orderByClause;
@@ -48,14 +45,11 @@ public class ProductDAO extends BaseDAO{
                     products.add(product);
                 }
             }
-        } catch (SQLException e) {
-
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return products;
     }
-
     public Product getProductById(int productId) {
         Product product = null;
         String query = "SELECT * FROM tblProduct WHERE id = ?";
@@ -79,12 +73,9 @@ public class ProductDAO extends BaseDAO{
                     product.setProductStatus(rs.getString("productStatus"));
                 }
             }
-        } catch (SQLException e) {
-            System.out.println("Lỗi truy xuất chi tiết sản phẩm ID " + productId + ": " + e.getMessage());
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
         return product;
     }
-
 }

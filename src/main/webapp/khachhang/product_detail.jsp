@@ -14,19 +14,14 @@
     </style>
 </head>
 <body>
-
-<!-- Nút quay lại trang tìm kiếm -->
 <a href="${pageContext.request.contextPath}/khachhang/search">< Quay lại tìm kiếm</a>
 <hr>
 
 <c:if test="${not empty outProduct}">
     <div class="detail-container">
-        <!-- Khu vực hình ảnh -->
         <div class="image-section">
             <img src="${outProduct.thumbnailImageUrl}" alt="${outProduct.productName}">
         </div>
-
-        <!-- Khu vực thông tin chi tiết -->
         <div class="info-section">
             <h2>${outProduct.productName}</h2>
             <p>Tình trạng:
@@ -35,18 +30,15 @@
                     <c:otherwise><span style="color: red; font-weight: bold;">Hết hàng</span></c:otherwise>
                 </c:choose>
             </p>
-
             <p>
                 <c:if test="${outProduct.retailPrice != null && outProduct.retailPrice > 0 && outProduct.retailPrice > outProduct.salePrice}">
                     <span class="retail-price">${outProduct.retailPrice} VNĐ</span><br>
                 </c:if>
                 <span class="sale-price">${outProduct.salePrice} VNĐ</span>
             </p>
-
             <c:if test="${outProduct.stockQuantity > 0}">
                 <button>Thêm vào giỏ hàng</button>
             </c:if>
-
             <div style="margin-top: 30px;">
                 <h3>Mô tả chi tiết:</h3>
                 <p style="white-space: pre-line;line-height: 1">

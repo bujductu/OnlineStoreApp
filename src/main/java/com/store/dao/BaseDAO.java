@@ -24,7 +24,7 @@ public abstract class BaseDAO {
         if (connection != null) {
             try {
                 connection.close();
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
